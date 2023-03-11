@@ -4,19 +4,19 @@ import { StyledStatistics, StyledStatisticsText, StyledStatisticsResult, StyledS
 export const Statistics = ({
   onTotalCount,
   onPositivePercentage,
-  points: { good, neutral, bad },
+  points,
 }) => {
   return (
     <div>
       <StyledStatistics>
         <StyledStatisticsText>
-          Good: <StyledStatisticsResult>{good}</StyledStatisticsResult>
+          Good: <StyledStatisticsResult>{points.good}</StyledStatisticsResult>
         </StyledStatisticsText>
         <StyledStatisticsText>
-          Neutral: <StyledStatisticsResult>{neutral}</StyledStatisticsResult>
+          Neutral: <StyledStatisticsResult>{points.neutral}</StyledStatisticsResult>
         </StyledStatisticsText>
         <StyledStatisticsText>
-          Bad: <StyledStatisticsResult>{bad}</StyledStatisticsResult>
+          Bad: <StyledStatisticsResult>{points.bad}</StyledStatisticsResult>
         </StyledStatisticsText>
       </StyledStatistics>
       <StyledStatisticsTotal>

@@ -10,7 +10,6 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-
   const onLeaveFeedback = keyState => {
     switch (keyState) {
       case 'good':
@@ -25,9 +24,9 @@ export const App = () => {
       default:
         break;
     }
-  }
+  };
 
-    const countTotalFeedback = () => {
+  const countTotalFeedback = () => {
     const totalFeedback = good + neutral + bad;
     return totalFeedback;
   };
@@ -38,21 +37,18 @@ export const App = () => {
 
   const state = { good, neutral, bad };
   const options = Object.keys(state);
-  
+
   return (
     <StyledContainer>
       <Section title="Please leave feedback">
-        <FeedbackOptions
-          options={options}
-        onLeaveFeedback={onLeaveFeedback}
-        />
+        <FeedbackOptions options={options} onLeaveFeedback={onLeaveFeedback} />
       </Section>
       <Section title="Statsics">
         {countTotalFeedback() > 0 ? (
           <Statistics
-          points={state}
-          onTotalCount={countTotalFeedback}
-          onPositivePercentage={countPositiveFeedbackPercentage}
+            points={state}
+            onTotalCount={countTotalFeedback}
+            onPositivePercentage={countPositiveFeedbackPercentage}
           />
         ) : (
           <Notification message="There is no feedback" />
@@ -60,4 +56,4 @@ export const App = () => {
       </Section>
     </StyledContainer>
   );
-}
+};

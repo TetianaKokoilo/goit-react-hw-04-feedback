@@ -7,10 +7,12 @@ import { Notification } from './Notification/Notification';
 // import PropTypes from 'prop-types';
 import { StyledContainer } from './App.styled';
 
-export default function App() {
+export const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const state = { good, neutral, bad };
+  const options = Object.keys(state);
 
   const onLeaveFeedback = keyState => {
     switch (keyState) {
@@ -37,8 +39,7 @@ export default function App() {
   const countPositiveFeedbackPercentage = () => {
     return Math.round((good / countTotalFeedback()) * 100);
   };
-  const state = { good, neutral, bad };
-  const options = Object.keys(state);
+
   
   return (
     <StyledContainer>
